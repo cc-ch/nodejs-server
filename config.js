@@ -6,7 +6,7 @@ var config = {
   nIdName:"nId",
   tempdir:'_temp_/',
   mysql:{
-    host: 'db',
+    host: '127.0.0.1',
     user: 'root',
     password: 'mysql57',
     database: 'cop',

@@ -18,10 +18,10 @@ app.use(cookieParser());
 process.env.ROOT = path.join(__dirname, './');
 process.env.WEBROOT = path.join(process.env.ROOT, '../../../webapp');
 process.env.TMPDIR = path.join(process.env.WEBROOT, config.tempdir);
+
 app.use(express.static(process.env.WEBROOT));
-app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
-app.use(bodyParser({ keepExtensions: true}));
+app.use(bodyParser.json({limit: '50mb'}));
 
 app.use(logger('dev'));
 require('./utils/logger').use(app);
@@ -32,7 +32,9 @@ app.use(session({
   cookie: {
     maxAge: 60000 * 60 //1小时后过期
   },
-  key:'connect.sId'
+  key:'connect.sId',
+  resave: true,
+  saveUninitialized: true
 }));
 
 var mailer = require('./routes/mailer');

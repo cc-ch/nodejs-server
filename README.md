@@ -8,7 +8,11 @@ nodejs-server 是一个使用 express 开发的通用后台框架，对于普通
 
 ```get: /api/student/?a=1&b=2```
 
-    这里
+    这里 ? 后面拼接的字段都是数据库表中有的字段，可以添加条件查询到
+
+```/api/t_comment?nService=1&ORDERBY=nId&DESC=DESC```
+
+   这里可以定向指定条件查询 ORDERYBY 相当于 mysql order by 可以 DESC 也可以 ASC  
 
 ### 通用分页查询
 ```get: /api/student/?LIMIT=0,5```
@@ -36,3 +40,12 @@ nodejs-server 是一个使用 express 开发的通用后台框架，对于普通
 
 ### 通用删除接口
 ```delete: /api/t_serviceapply```
+
+### 通用导出数据表接口
+```get: /export/table```
+
+### 文件上传接口
+
+```post: /api/upload/default```
+
+    文件上传地址是在后台当前目录下的 /store/temp/ 可以再代码中自己设置路径

@@ -5,6 +5,11 @@
   "scripts": {
     "start": "node ./bin/www"
   },
+  "keywords": [
+        "nodejs",
+        "server",
+        "mock"
+    ],
   "dependencies": {
     "body-parser": "~1.13.2",
     "connect-multiparty": "~2.0.0",
